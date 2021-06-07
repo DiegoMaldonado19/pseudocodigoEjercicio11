@@ -1,0 +1,51 @@
+Algoritmo algoritmo11
+	Definir contadorImpares Como Entero
+	Definir sumaPares Como Entero
+	Definir contadorPares Como Entero
+	Definir contadorSegundaDocena Como Entero
+	Definir numeroMayor Como Entero
+	Definir numeroMenor Como Entero
+	Dimension numeroAleatorio[10]
+	Dimension numeroPar[10]
+	contadorImpares <- 0
+	sumaPares <- 0
+	contadorPares <- 0
+	numeroMayor <- 0
+	numeroMenor <- 36
+	contadorSegundaDocena <- 0
+	Para i<-1 Hasta 10 Hacer
+		numeroAleatorio[i] <- azar(36)
+		Escribir numeroAleatorio[i],' ' Sin Saltar
+	FinPara
+	Para i<-1 Hasta 10 Hacer
+		resto <- numeroAleatorio[i] MOD 2
+		Si resto<>0 Entonces
+			contadorImpares <- contadorImpares+1
+		SiNo
+			contadorPares <- contadorPares+1
+			numeroPar[contadorPares] <- numeroAleatorio[i]
+		FinSi
+	FinPara
+	Para i<-1 Hasta contadorPares Hacer
+		sumaPares <- sumaPares+numeroPar[i]
+	FinPara
+	promedio <- sumaPares/contadorPares
+	Escribir 'La cantidad de numeros impares es: ',contadorImpares
+	Escribir 'El promedio de los numeros pares es: ',promedio
+	Para i<-1 Hasta 10 Hacer
+		Si numeroAleatorio[i]>=13 Y numeroAleatorio[i]<=24 Entonces
+			contadorSegundaDocena <- contadorSegundaDocena+1
+		FinSi
+	FinPara
+	Escribir 'El total de numeros dentro de a segunda docena del 13 al 24 es: ',contadorSegundaDocena
+	Para i<-1 Hasta 10 Hacer
+		Si numeroAleatorio[i]>numeroMayor Entonces
+			numeroMayor <- numeroAleatorio[i]
+		FinSi
+		Si numeroAleatorio[i]<numeroMenor Entonces
+			numeroMenor <- numeroAleatorio[i]
+		FinSi
+	FinPara
+	Escribir 'El numero mayor es: ',numeroMayor
+	Escribir 'El numero menor es: ',numeroMenor
+FinAlgoritmo
